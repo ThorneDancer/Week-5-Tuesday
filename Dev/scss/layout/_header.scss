@@ -1,3 +1,65 @@
 /* =============
     Header
 ============= */
+header {
+    background-color: $white;
+    display: grid;
+    grid-template-areas: "logo burger" "nav nav";
+    grid-template-columns: 70% auto;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    @include lg {
+        grid-template-areas: "logo nav";
+        grid-template-columns: 40% auto;
+    }
+
+    section:nth-child(1) {
+        font-size: rem-calc(18);
+        font-weight: 700;
+        grid-area: logo;
+        padding: 10px;
+        @include md {
+            font-size: rem-calc(24);
+            padding: 20px;
+        }
+        @include lg {
+            font-size: rem-calc(32);
+            padding: 35px;
+        }
+
+        span {
+            color: $primary;
+        }
+    }
+
+    section:nth-child(2) {
+        align-items: center;
+        display: flex;
+        font-size: rem-calc(28);
+        grid-area: burger;
+        justify-content: flex-end;
+        padding: 10px;
+        @include md {
+            font-size: rem-calc(38);
+            padding: 20px;
+        }
+        @include lg {
+            display: none;
+        }
+
+        button {
+            background-color: $white;
+            border: none;
+            outline: none;
+        }
+    }
+
+    nav {
+        display: none;
+        grid-area: nav;
+        @include lg {
+            display: block !important;
+        }
+    }
+}

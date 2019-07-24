@@ -1,0 +1,103 @@
+/* =============
+    About
+============= */
+#about {
+    section:nth-child(1) {
+        text-align: center;
+
+        h3 {
+            font-size: rem-calc(18);
+            font-weight: 300;
+            @include md {
+                font-size: rem-calc(28);
+            }
+            @include lg {
+                font-size: rem-calc(37);
+            }
+        }
+
+        h1 {
+            color: $primary;
+            font-size: rem-calc(28);
+            font-weight: 700;
+            @include md {
+                font-size: rem-calc(42);
+            }
+            @include lg {
+                font-size: rem-calc(57);
+            }
+        }
+    }
+
+    ul {
+        padding: 10px 10px 20px;
+        @include md {
+            display: grid;
+            grid-template-areas: ". section . section-2 .";
+            grid-template-columns: 5% auto 20% auto 5%;
+        }
+
+        li {
+            display: grid;
+            grid-area: section;
+            grid-template-areas: "icon header" "text text";
+            grid-template-columns: 16% auto;
+            margin: 20px 0;
+            @include sm {
+                grid-template-columns: 10% auto;
+            }
+            @include md {
+                grid-template-columns: 20% auto;
+            }
+
+            i {
+                color: $primary;
+                font-size: rem-calc(34);
+                grid-area: icon;
+                margin-left: 10px;
+                @include sm {
+                    font-size: rem-calc(40);
+                }
+                @include md {
+                    font-size: rem-calc(54);
+                    margin-left: 5%;
+                }
+            }
+
+            h2 {
+                align-items: center;
+                color: $primary;
+                display: flex;
+                font-size: rem-calc(20);
+                font-weight: 600;
+                grid-area: header;
+                @include md {
+                    font-size: rem-calc(24);
+                }
+                @include lg {
+                    font-size: rem-calc(27);
+                }
+            }
+
+            p {
+                font-size: rem-calc(16);
+                font-weight: 400;
+                grid-area: text;
+                padding-top: 10px;
+                @include sm {
+                    font-size: rem-calc(18);
+                }
+                @include md {
+                    font-size: rem-calc(20);
+                }
+                @include lg {
+                    font-size: rem-calc(25);
+                }
+            }
+        }
+
+        li:last-child {
+            grid-area: section-2;
+        }
+    }
+}

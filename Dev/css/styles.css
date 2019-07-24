@@ -311,9 +311,33 @@ template {
 /* =============
     Base
 ============= */
+h1, h2, h3, h4, h5, p, figure {
+  padding: 0;
+  margin: 0; }
+
+ul {
+  padding: 0;
+  margin: 0; }
+  ul li {
+    list-style: none; }
+
+a:link, a:visited {
+  text-decoration: none;
+  transition: 0.25s; }
+
+.project-grid {
+  display: grid;
+  grid-template-areas: ". content .";
+  grid-template-columns: 10px auto 10px; }
+  .project-grid > div {
+    grid-area: content; }
+
 /* =============
     Typography
 ============= */
+body {
+  font-family: 'Open Sans', sans-serif; }
+
 /* =============
     Buttons
 ============= */
@@ -335,9 +359,276 @@ textarea {
 /* =============
     Navigation
 ============= */
+header nav {
+  background-color: #fff;
+  display: grid;
+  grid-template-areas: ". nav .";
+  grid-template-columns: 10px auto 10px;
+  padding-top: 10px; }
+  @media (min-width: 976px) {
+    header nav {
+      padding-right: 35px; } }
+
+header ul {
+  grid-area: nav; }
+  @media (min-width: 976px) {
+    header ul {
+      align-items: center;
+      display: flex;
+      height: 100%;
+      justify-content: flex-end; } }
+  header ul li {
+    border-bottom: #1CBAC7 2px solid;
+    margin-bottom: 15px;
+    padding: 10px;
+    text-align: right; }
+    @media (min-width: 976px) {
+      header ul li {
+        border: none;
+        margin-bottom: 0;
+        padding: 0 15px; } }
+    header ul li a:link,
+    header ul li a:visited {
+      color: #000;
+      display: inline-block;
+      font-size: 1.125rem; }
+      @media (min-width: 976px) {
+        header ul li a:link,
+        header ul li a:visited {
+          font-size: 1.3125rem;
+          padding-bottom: 10px; } }
+    header ul li a:active,
+    header ul li a:hover {
+      color: #1CBAC7; }
+  header ul li:last-child i {
+    padding-right: 10px; }
+  @media (min-width: 976px) {
+    header ul li:last-child {
+      border-bottom: #1CBAC7 2px solid; } }
+
 /* =============
     Header
 ============= */
+header {
+  background-color: #fff;
+  display: grid;
+  grid-template-areas: "logo burger" "nav nav";
+  grid-template-columns: 70% auto;
+  position: fixed;
+  top: 0;
+  width: 100%; }
+  @media (min-width: 976px) {
+    header {
+      grid-template-areas: "logo nav";
+      grid-template-columns: 40% auto; } }
+  header section:nth-child(1) {
+    font-size: 1.125rem;
+    font-weight: 700;
+    grid-area: logo;
+    padding: 10px; }
+    @media (min-width: 748px) {
+      header section:nth-child(1) {
+        font-size: 1.5rem;
+        padding: 20px; } }
+    @media (min-width: 976px) {
+      header section:nth-child(1) {
+        font-size: 2rem;
+        padding: 35px; } }
+    header section:nth-child(1) span {
+      color: #1CBAC7; }
+  header section:nth-child(2) {
+    align-items: center;
+    display: flex;
+    font-size: 1.75rem;
+    grid-area: burger;
+    justify-content: flex-end;
+    padding: 10px; }
+    @media (min-width: 748px) {
+      header section:nth-child(2) {
+        font-size: 2.375rem;
+        padding: 20px; } }
+    @media (min-width: 976px) {
+      header section:nth-child(2) {
+        display: none; } }
+    header section:nth-child(2) button {
+      background-color: #fff;
+      border: none;
+      outline: none; }
+  header nav {
+    display: none;
+    grid-area: nav; }
+    @media (min-width: 976px) {
+      header nav {
+        display: block !important; } }
+
 /* =============
     Footer
 ============= */
+footer {
+  background-color: #1CBAC7;
+  padding: 20px 0; }
+  footer h1 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    text-align: center; }
+    @media (min-width: 748px) {
+      footer h1 {
+        font-size: 1.375rem; } }
+    @media (min-width: 976px) {
+      footer h1 {
+        font-size: 1.625rem; } }
+    footer h1 span {
+      color: #fff; }
+  footer nav ul {
+    align-items: center;
+    display: flex;
+    justify-content: center; }
+    footer nav ul li {
+      font-size: 1.5rem;
+      padding: 0 10px; }
+      @media (min-width: 748px) {
+        footer nav ul li {
+          font-size: 2rem; } }
+      @media (min-width: 976px) {
+        footer nav ul li {
+          font-size: 2.5rem; } }
+
+/* =============
+    Hero
+============= */
+#hero {
+  background-image: url("../img/hero/hero.jpg");
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 300px;
+  margin-bottom: 40px; }
+  @media (min-width: 560px) {
+    #hero {
+      height: 400px;
+      margin-top: 61px; } }
+  @media (min-width: 748px) {
+    #hero {
+      height: 550px;
+      margin-top: 94px; } }
+  @media (min-width: 976px) {
+    #hero {
+      height: 674px;
+      margin-bottom: 60px;
+      margin-top: 143px; } }
+  @media (min-width: 1200px) {
+    #hero {
+      height: 900px; } }
+  #hero section:first-child {
+    padding-top: 40%;
+    text-align: center; }
+    @media (min-width: 1200px) {
+      #hero section:first-child {
+        padding-top: 700px; } }
+    #hero section:first-child h2 {
+      color: #1CBAC7;
+      font-size: 1.125rem;
+      font-weight: 600; }
+      @media (min-width: 748px) {
+        #hero section:first-child h2 {
+          font-size: 1.75rem; } }
+      @media (min-width: 976px) {
+        #hero section:first-child h2 {
+          font-size: 2.3125rem; } }
+    #hero section:first-child h1 {
+      color: #fff;
+      font-size: 2.125rem;
+      font-weight: 700; }
+      @media (min-width: 748px) {
+        #hero section:first-child h1 {
+          font-size: 3.375rem; } }
+      @media (min-width: 976px) {
+        #hero section:first-child h1 {
+          font-size: 5.25rem; } }
+
+/* =============
+    About
+============= */
+#about section:nth-child(1) {
+  text-align: center; }
+  #about section:nth-child(1) h3 {
+    font-size: 1.125rem;
+    font-weight: 300; }
+    @media (min-width: 748px) {
+      #about section:nth-child(1) h3 {
+        font-size: 1.75rem; } }
+    @media (min-width: 976px) {
+      #about section:nth-child(1) h3 {
+        font-size: 2.3125rem; } }
+  #about section:nth-child(1) h1 {
+    color: #1CBAC7;
+    font-size: 1.75rem;
+    font-weight: 700; }
+    @media (min-width: 748px) {
+      #about section:nth-child(1) h1 {
+        font-size: 2.625rem; } }
+    @media (min-width: 976px) {
+      #about section:nth-child(1) h1 {
+        font-size: 3.5625rem; } }
+
+#about ul {
+  padding: 10px 10px 20px; }
+  @media (min-width: 748px) {
+    #about ul {
+      display: grid;
+      grid-template-areas: ". section . section-2 .";
+      grid-template-columns: 5% auto 20% auto 5%; } }
+  #about ul li {
+    display: grid;
+    grid-area: section;
+    grid-template-areas: "icon header" "text text";
+    grid-template-columns: 16% auto;
+    margin: 20px 0; }
+    @media (min-width: 560px) {
+      #about ul li {
+        grid-template-columns: 10% auto; } }
+    @media (min-width: 748px) {
+      #about ul li {
+        grid-template-columns: 20% auto; } }
+    #about ul li i {
+      color: #1CBAC7;
+      font-size: 2.125rem;
+      grid-area: icon;
+      margin-left: 10px; }
+      @media (min-width: 560px) {
+        #about ul li i {
+          font-size: 2.5rem; } }
+      @media (min-width: 748px) {
+        #about ul li i {
+          font-size: 3.375rem;
+          margin-left: 5%; } }
+    #about ul li h2 {
+      align-items: center;
+      color: #1CBAC7;
+      display: flex;
+      font-size: 1.25rem;
+      font-weight: 600;
+      grid-area: header; }
+      @media (min-width: 748px) {
+        #about ul li h2 {
+          font-size: 1.5rem; } }
+      @media (min-width: 976px) {
+        #about ul li h2 {
+          font-size: 1.6875rem; } }
+    #about ul li p {
+      font-size: 1rem;
+      font-weight: 400;
+      grid-area: text;
+      padding-top: 10px; }
+      @media (min-width: 560px) {
+        #about ul li p {
+          font-size: 1.125rem; } }
+      @media (min-width: 748px) {
+        #about ul li p {
+          font-size: 1.25rem; } }
+      @media (min-width: 976px) {
+        #about ul li p {
+          font-size: 1.5625rem; } }
+  #about ul li:last-child {
+    grid-area: section-2; }

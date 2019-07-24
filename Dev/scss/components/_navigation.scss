@@ -1,3 +1,62 @@
 /* =============
     Navigation
 ============= */
+header {
+    nav {
+        background-color: $white;
+        display: grid;
+        grid-template-areas: ". nav .";
+        grid-template-columns: 10px auto 10px;
+        padding-top: 10px;
+        @include lg {
+            padding-right: 35px;
+        }
+    }
+
+    ul {
+        grid-area: nav;
+        @include lg {
+            align-items: center;
+            display: flex;
+            height: 100%;
+            justify-content: flex-end;
+        }
+
+        li {
+            border-bottom: $primary 2px solid;
+            margin-bottom: 15px;
+            padding: 10px;
+            text-align: right;
+            @include lg {
+                border: none;
+                margin-bottom: 0;
+                padding: 0 15px;
+            }
+
+            a:link,
+            a:visited {
+                color: $black;
+                display: inline-block;
+                font-size: rem-calc(18);
+                @include lg {
+                    font-size: rem-calc(21);
+                    padding-bottom: 10px;
+                }
+            }
+
+            a:active,
+            a:hover {
+                color: $primary;
+            }
+        }
+
+        li:last-child {
+            i {
+                padding-right: 10px;
+            }
+            @include lg {
+                border-bottom: $primary 2px solid;
+            }
+        }
+    }
+}

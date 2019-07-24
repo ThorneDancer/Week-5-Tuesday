@@ -1,0 +1,59 @@
+/* =============
+    Hero
+============= */
+#hero {
+    background-image: url("../img/hero/hero.jpg");
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+    margin-bottom: 40px;
+    @include sm {
+        height: 400px;
+        margin-top: 61px;
+    }
+    @include md {
+        height: 550px;
+        margin-top: 94px;
+    }
+    @include lg {
+        height: 674px;
+        margin-bottom: 60px;
+        margin-top: 143px;
+    }
+    @include xl {
+        height: 900px;
+    }
+
+    section:first-child {
+        padding-top: 40%;
+        text-align: center;
+        @include xl {
+            padding-top: 700px;
+        }
+
+        h2 {
+            color: $primary;
+            font-size: rem-calc(18);
+            font-weight: 600;
+            @include md {
+                font-size: rem-calc(28);
+            }
+            @include lg {
+                font-size: rem-calc(37);
+            }
+        }
+
+        h1 {
+            color: $white;
+            font-size: rem-calc(34);
+            font-weight: 700;
+            @include md {
+                font-size: rem-calc(54);
+            }
+            @include lg {
+                font-size: rem-calc(84);
+            }
+        }
+    }
+}

@@ -1,3 +1,43 @@
 /* =============
     Footer
 ============= */
+footer {
+    background-color: $primary;
+    padding: 20px 0;
+
+    h1 {
+        font-size: rem-calc(18);
+        font-weight: 700;
+        margin-bottom: 5px;
+        text-align: center;
+        @include md {
+            font-size: rem-calc(22);
+        }
+        @include lg {
+            font-size: rem-calc(26);
+        }
+
+        span {
+            color: $white;
+        }
+    }
+
+    nav {
+        ul {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+
+            li {
+                font-size: rem-calc(24);
+                padding: 0 10px;
+                @include md {
+                    font-size: rem-calc(32);
+                }
+                @include lg {
+                    font-size: rem-calc(40);
+                }
+            }
+        }
+    }
+}
